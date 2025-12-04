@@ -1,0 +1,41 @@
+.inputarea{ 
+    flex:1;
+    background-color: rgb(38, 38, 38);
+    border: 2px dashed rgb(255, 255, 255);
+    align-items: center;
+    width: 800px;
+    margin-top: 20px;
+    border-radius: 35px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .inputarea {
+        flex: 0;         /* stop expanding */    /* optional */
+        max-width: 400px; /* optional */
+        max-height: 400px;
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
+@media (max-width: 450px) {
+    .inputarea {
+        flex: 0;         /* stop expanding */
+        width: 300px; /* optional */ 
+        height: px;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .inputarea {
+       /* stop expanding */
+        max-width: 600px; /* optional */ 
+
+    }
+}

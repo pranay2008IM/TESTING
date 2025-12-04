@@ -1,0 +1,16 @@
+.generatediv{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.generatediv button{
+    width: 180px;
+    height: 70px;
+    background-color: #5b63b7;
+    border: 2px dotted rgb(255, 255, 255);
+    border-radius: 30px;
+    color: white;
+}

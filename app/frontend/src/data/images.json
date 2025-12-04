@@ -1,0 +1,12 @@
+[
+    {"name":"manga","url":"/styles/manga.png","id":0},
+    {"name":"Glitch Art","url":"/styles/Glitch_art.png","id":1},
+    {"name":"Pixel Art","url":"/styles/Pixel_art.png","id":2},
+    {"name":"Watercolor","url":"/styles/Watercolor_Sketch.png","id":3},
+    {"name":"Gradient Art","url":"/styles/Gradient_map.png","id":4},
+    {"name":"Abstract","url":"/styles/Abstract_Geomeric.png","id":5},
+    {"name":"Engraving","url":"/styles/engraving_style.png","id":6},
+    {"name":"Vector","url":"/styles/vector_illustration.png","id":7},
+    {"name":"Line style","url":"/styles/Continuous_line_drawing.png","id":8}
+    
+]

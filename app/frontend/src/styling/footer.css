@@ -1,0 +1,8 @@
+.foooterdiv{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}

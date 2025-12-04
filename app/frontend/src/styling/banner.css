@@ -1,0 +1,19 @@
+.bannerimagesize{
+    width: 98%;
+    background-color: black;
+    border-radius: 20px;
+}
+.boldtext{
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.0em;
+    font-size: 25px;
+    font-family:"Barlow Condensed",sans-serif;
+}
+
+@media (max-width: 450px) {
+  .boldtext{
+    font-size: 20px;
+  }
+}

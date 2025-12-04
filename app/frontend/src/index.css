@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Patrick+Hand&display=swap');
+#root {
+  height:auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 110px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: rgb(202, 148, 255);
+  border-radius: 110px;
+}
+
