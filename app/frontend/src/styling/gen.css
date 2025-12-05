@@ -14,3 +14,14 @@
     border-radius: 30px;
     color: white;
 }
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.imagediv{
+    margin-top: 10px;
+    border-radius: 20px;
+    display:flex;
+    width: 80%;
+    background-color: red;
+}

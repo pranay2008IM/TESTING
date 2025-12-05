@@ -1,30 +1,47 @@
 import { useState } from 'react';
 import '../styling/gen.css';
+import { use } from 'react';
 
 function Generate({senddata}){
-    const[buttondisable,setbuttondisable]=useState(false);
-    async function ff(){
-            try {
-                const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.google.com');
-                const response = await fetch(proxyUrl);
+    const[isgenerating,setisgenerating]=useState(false);
+    const[generatedimage,setgeneratedimage]=useState(false);
+      const testGet = async () => {
+        const res = await fetch("https://testing-r9d9.onrender.com/");
+        const data = await res.text();
+        alert(data);
+    };
 
-                // Check if the request was successful
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+    const genrateimage = async () => {
+        setisgenerating(true);
+        try{
 
-                const data = await response.text();
-                setbuttondisable(true);
-                console.log(data);
-        } catch (error) {
-             console.error('Failed to fetch dog:', error);
-        }
+        
+        const res = await fetch("https://testing-r9d9.onrender.com/api/test", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name: "Pranay" })
+        });
+   
+
+        const data = await res.json();
+        alert(data.message); 
+        setgeneratedimage(true);
 
     }
+    catch(err){
+        alert("error occureed");
+    }
+    setisgenerating(false);
+    setgeneratedimage(false);
+    };
+    
     return(
         <div className="generatediv">
-         <button onClick={ff}>{senddata}
+         <button disabled={isgenerating} className={isgenerating ? "disabled" : ""} onClick={genrateimage}>{senddata}
            Generate</button>
+        {generatedimage?(<div className="imagediv"><h1>image div here</h1></div>):(<div></div>)}
         </div>
     )
 }

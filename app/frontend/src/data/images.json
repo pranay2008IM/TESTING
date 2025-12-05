@@ -1,12 +1,12 @@
 [
-    {"name":"manga","url":"/styles/manga.png","id":0},
-    {"name":"Glitch Art","url":"/styles/Glitch_art.png","id":1},
-    {"name":"Pixel Art","url":"/styles/Pixel_art.png","id":2},
-    {"name":"Watercolor","url":"/styles/Watercolor_Sketch.png","id":3},
-    {"name":"Gradient Art","url":"/styles/Gradient_map.png","id":4},
-    {"name":"Abstract","url":"/styles/Abstract_Geomeric.png","id":5},
-    {"name":"Engraving","url":"/styles/engraving_style.png","id":6},
-    {"name":"Vector","url":"/styles/vector_illustration.png","id":7},
-    {"name":"Line style","url":"/styles/Continuous_line_drawing.png","id":8}
+    {"title":"manga",       "imageUrl":"/styles/manga1.png",                   "id":9 ,"color":"#3b82f6"},
+    {"title":"Glitch Art",  "imageUrl":"/styles/Glitch_art.png",              "id":1 ,"color":"#ff6f91"},
+    {"title":"Pixel Art",   "imageUrl":"/styles/Pixel_art.png",               "id":2 ,"color":"#ff9671"},
+    {"title":"Watercolor",  "imageUrl":"/styles/Watercolor_Sketch.png",       "id":3 ,"color":"#fbeaff"},
+    {"title":"Gradient Art","imageUrl":"/styles/Gradient_map.png",            "id":4 ,"color":"#00c9a7"},
+    {"title":"Abstract",    "imageUrl":"/styles/Abstract_Geomeric.png",       "id":5 ,"color":"#845ec2"},
+    {"title":"Engraving",   "imageUrl":"/styles/engraving_style.png",         "id":6 ,"color":"#c4fcef"},
+    {"title":"Vector",      "imageUrl":"/styles/vector_illustration.png",     "id":7 ,"color":"#b0a8b9"},
+    {"title":"Line style",  "imageUrl":"/styles/Continuous_line_drawing.png", "id":8 ,"color":"#c34a36"}
     
 ]

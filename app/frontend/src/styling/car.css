@@ -1,0 +1,139 @@
+/* Title */
+.header-title {
+    font-size: 1.5rem; /* smaller text */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+/* Carousel Container (smaller) */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 40vw;   /* reduced from 60vw → smaller */
+    min-width: 250px;
+    margin: 0 auto;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #111827;
+    border: 1px solid #374151;
+
+    padding-top: 100%; /* keep 1:1 ratio */
+    height: 0;
+}
+
+/* Slides */
+.slide {
+    transition: all 0.5s ease-in-out;
+    color: white;
+    padding: 1rem; /* reduced padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    position: absolute;
+    inset: 0;  
+}
+
+@media (min-width: 768px) {
+    .slide {
+        padding: 1.2rem; /* reduced from 2rem */
+    }
+}
+
+
+/* Medium screens */
+@media (min-width: 768px) {
+    .carousel-container {
+        padding-top: 70%; /* Reduce height */
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .carousel-container {
+        padding-top: 55%; /* Even shorter */
+    }
+}
+
+.slide-title {
+    font-size: 1.25rem; /* reduced from 1.875rem */
+    font-weight: 700;
+}
+
+.slide-description {
+    font-size: 0.875rem; /* slightly smaller */
+    color: #e5e7eb;
+}
+
+/* Image overlay */
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.25; /* lighter */
+    pointer-events: none;
+}
+
+.image-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navigation arrows */
+.nav-controls {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem; /* smaller */
+    z-index: 20;
+}
+
+.nav-left { left: 0; }
+.nav-right { right: 0; }
+
+.nav-button {
+    padding: 0.5rem; /* smaller buttons */
+    background-color: rgba(31, 41, 55, 0.5);
+    border-radius: 9999px;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: rgba(31, 41, 55, 0.8);
+    transform: scale(1.05);
+}
+
+/* Indicators */
+.indicators {
+    position: absolute;
+    bottom: 0.5rem; /* moved up slightly */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    z-index: 20;
+}
+
+.indicator-button {
+    height: 6px; 
+    width: 6px;
+    border-radius: 9999px;
+    background: #9ca3af;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.indicator-button.active {
+    width: 20px;   /* reduced from 32px */
+    background: white;
+}

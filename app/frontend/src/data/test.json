@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Mountain Views",
+    "description": "A serene view of snow-capped mountains at sunrise.",
+    "imageUrl": "https://placehold.co/800x800/10b981/ffffff?text=Slide+1",
+    "color": "#10b981"
+  },
+  {
+    "id": 2,
+    "title": "Urban Landscape",
+    "description": "The vibrant skyline of a bustling metropolitan area.",
+    "imageUrl": "https://placehold.co/800x800/3b82f6/ffffff?text=Slide+2",
+    "color": "#3b82f6"
+  },
+  {
+    "id": 3,
+    "title": "Coastal Sunset",
+    "description": "Warm colors spreading over the ocean horizon.",
+    "imageUrl": "https://placehold.co/800x800/ef4444/ffffff?text=Slide+3",
+    "color": "#ef4444"
+  }
+]
