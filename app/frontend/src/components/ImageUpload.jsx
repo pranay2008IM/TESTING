@@ -100,6 +100,7 @@ function ImageUpload({onsetimage}) {
       {image && (
         <div className="imageuploaddiv"
         >
+          <p className="imagepreview">Image Preview</p>
           <img
             src={image}
             alt="Preview"

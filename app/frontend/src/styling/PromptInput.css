@@ -10,23 +10,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+@media (max-width: 850px) {
+    .inputarea {
+        width: 90%;
+        height: 400px;       /* still fixed */
+    }
 }
 
 @media (max-width: 600px) {
-    .inputarea {
-        flex: 0;         /* stop expanding */    /* optional */
-        max-width: 400px; /* optional */
+    /*.inputarea 
+        flex: 0;        
+        max-width: 400px; 
         max-height: 400px;
         width: 90%;
         height: auto;
         padding: 20px;
+    */
+        .inputarea {
+        width: 90%;
+        height: 350px;       /* fixed */
     }
 }
 @media (max-width: 450px) {
     .inputarea {
         flex: 0;         /* stop expanding */
         width: 300px; /* optional */ 
-        height: px;
         padding: 20px;
     }
 }

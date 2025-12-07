@@ -41,7 +41,10 @@ function Generate({senddata}){
         <div className="generatediv">
          <button disabled={isgenerating} className={isgenerating ? "disabled" : ""} onClick={genrateimage}>{senddata}
            Generate</button>
-        {generatedimage?(<div className="imagediv"><h1>image div here</h1></div>):(<div></div>)}
+        {generatedimage?(<div className="imagediv">
+            <h1>image div here</h1>
+            
+            </div>):(<div></div>)}
         </div>
     )
 }

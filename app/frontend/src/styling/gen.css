@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;
+    
 }
 .generatediv button{
     width: 180px;
@@ -22,6 +24,45 @@ button:disabled {
     margin-top: 10px;
     border-radius: 20px;
     display:flex;
-    width: 80%;
     background-color: red;
+    width: 500px;
+    height: 500px;
+    margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+    .imagediv {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 450px) {
+    .imagediv {
+        width: 350px;
+        height: 350px;
+    }
+}
+@media (max-width: 375px) {
+    .imagediv {
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 320px) {
+    .imagediv {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.actualimage{
+    width: 100%;
+    height: 100%;
+}
+
+.actualimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fill but keep aspect ratio */
+    border-radius: 20px; /* optional */
 }

@@ -7,6 +7,7 @@ import { useState } from "react";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import Carsou from "../components/Carsou";
+import Ge from "../components/Ge";
 function Home(){
 
     const[imageid,setimageid]=useState(null);
@@ -21,9 +22,11 @@ function Home(){
             <Header/> 
             <Banner />
             <PromptInput onsetimage={setiamge}/>
-            <Carsou/>
-            {image&&imageid?(<Generate senddata={imageid}/>):(<p>upload the image and choose the style please</p>)}
+            <Carsou onset={setimageid}/>
+            <p>{imageid}</p>
+            {image?(<Ge senddata={{imageid,image}}/>):(<p>upload the image and choose the style please</p>)}
             <Footer/>
+            
             
         </div>
     )

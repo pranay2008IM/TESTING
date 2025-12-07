@@ -1,4 +1,4 @@
-import ImageUpload from "./Imageupload";
+import ImageUpload from "./ImageUpload";
 import '../styling/PromptInput.css';
 function PromptInput({onsetimage}){
 

@@ -45,7 +45,7 @@
 /* ---------------------- */
 .slide {
     transition: all 0.7s ease-in-out;
-    color: white;
+    color: rgb(0, 0, 0);
 
 
     display: flex;
@@ -81,7 +81,7 @@
 }
 
 .slide-description {
-    color: #e5e7eb;
+    color: #ffffff;
 }
 
 

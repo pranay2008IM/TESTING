@@ -1,25 +1,42 @@
 import { useState, useCallback } from 'react';
 import data from "../data/images.json";
 import '../styling/c.css';
-function Carsou() {
+function Carsou({onset}) {
+  const[selectid,setSelectedid]=useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = data.length;
 
   // Function to move to the next slide
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-  }, [totalSlides]);
+  setCurrentIndex(prevIndex => {
+    const newIndex = (prevIndex + 1) % totalSlides;
+    setSelectedid(newIndex);
+    onset && onset(newIndex);
+    return newIndex;
+  });
+}, [totalSlides]);
+
 
   // Function to move to the previous slide
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
-  }, [totalSlides]);
+  setCurrentIndex(prevIndex => {
+    const newIndex = (prevIndex - 1 + totalSlides) % totalSlides;
+    setSelectedid(newIndex);
+    onset && onset(newIndex);
+    return newIndex;
+  });
+}, [totalSlides]);
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
+const goToSlide = (slideIndex) => {
+  setCurrentIndex(slideIndex);
+  setSelectedid(slideIndex);
+  onset(slideIndex);
+  console.log("Selected ID:", selectid);
+};
+
 
   const currentSlide = data[currentIndex];
+  
 
   // Inline SVG for the left arrow icon
   const LeftArrowIcon = (props) => (
