@@ -14,15 +14,15 @@ export default function Carousel({onset}) {
     <div style={{ display: "flex", gap: "20px",justifyContent:"center",flexDirection:"row", flexWrap:"wrap" }}>
       {images.map((item) => (
         <div>
-          <button className={selectedid==item.id?"selected-style":"style-btn"}title={item.name} type="button" name={item.id}  data-id={item.id} data-name={item.name} onClick={optionchoosen}>
+          <button className={selectedid==item.id?"selected-style":"style-btn"}title={item.title} type="button" name={item.id}  data-id={item.id} data-name={item.title} onClick={optionchoosen}>
         <img
           key={item.id}
-          src={item.url}
-          alt={item.name}
+          src={item.imageUrl}
+          alt={item.title}
           className="divclass"
 
         /></button>
-        <p style={{textAlign:"center",marginTop:"6px",fontSize:"20px",fontFamily: '"Barlow Condensed", sans-serif'}}>{item.name}</p>
+        <p style={{textAlign:"center",marginTop:"6px",fontSize:"20px",fontFamily: '"Barlow Condensed", sans-serif'}}>{item.title}</p>
         </div>
       ))}
     </div>
