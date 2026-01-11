@@ -29,7 +29,7 @@ app.post("/api/generation", upload.single("image"), async (req, res) => {
       model: "gemini-2.5-flash",
       contents: textfile,
       config: {
-      maxOutputTokens: 2000,
+      maxOutputTokens: 500,
       temperature: 0.6,
     },
   });
