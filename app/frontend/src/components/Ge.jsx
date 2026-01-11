@@ -25,7 +25,7 @@ function Ge({ senddata }) {
     formData.append("text",senddata.textinput);
 
     try {
-      const res = await fetch("http://localhost:5000/api/generation", {
+      const res = await fetch("https://testing-1-gn0w.onrender.com/api/generation", {
         method: "POST",
         body: formData,
       });
