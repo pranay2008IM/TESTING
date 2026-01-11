@@ -27,7 +27,11 @@ app.post("/api/generation", upload.single("image"), async (req, res) => {
     const file = req.file;            // Image file from the upload
     const response=await ai.models.generateContent({
       model: "gemini-2.5-flash",
-      contents: textfile+"limit generation to 50 lines ",
+      contents: textfile,
+      config: {
+      maxOutputTokens: 2000,
+      temperature: 0.6,
+    },
   });
     console.log(response.text);
     console.log("ID:", id);
