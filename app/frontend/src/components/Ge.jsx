@@ -23,13 +23,13 @@ function Ge({ senddata }) {
     formData.append("id", senddata.imageid ?? "test-id");
 
     try {
-      const res = await fetch("http://localhost:5000/api/generation", {
+      const res = await fetch("https://testing-1-gn0w.onrender.com/api/generation", {
         method: "POST",
         body: formData,
       });
 
       const data = await res.json();
-      setGeneratedText(data.message);
+      setGeneratedText(data.message);clear
 
     } catch (err) {
       console.error(err);
