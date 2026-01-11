@@ -4,6 +4,7 @@ import "../styling/gen.css";
 function Ge({ senddata }) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedText, setGeneratedText] = useState("");
+  const [textinputfield,settextf]=useState("");
 
   // 🔒 SAFETY CHECK
   if (!senddata) {
@@ -21,15 +22,16 @@ function Ge({ senddata }) {
     }
 
     formData.append("id", senddata.imageid ?? "test-id");
+    formData.append("text",senddata.textinput);
 
     try {
-      const res = await fetch("https://testing-1-gn0w.onrender.com/api/generation", {
+      const res = await fetch("http://localhost:5000/api/generation", {
         method: "POST",
         body: formData,
       });
 
       const data = await res.json();
-      setGeneratedText(data.message);clear
+      setGeneratedText(data.message);
 
     } catch (err) {
       console.error(err);
@@ -47,7 +49,7 @@ function Ge({ senddata }) {
 
       {generatedText && (
         <div className="imagediv">
-          <p><strong>Gemini says:</strong></p>
+          <p><strong>generated:</strong></p>
           <p>{generatedText}</p>
         </div>
       )}

@@ -1,4 +1,4 @@
-import express, { response } from "express";
+import express, { response, text } from "express";
 import cors from "cors";
 import multer from "multer";
 import dotenv from "dotenv";
@@ -22,11 +22,12 @@ app.get("/", (req, res) => {
 // THIS route accepts FormData (image + id)
 app.post("/api/generation", upload.single("image"), async (req, res) => {
   try {
-    const id = req.body.id;           // ID from formdata
+    const id = req.body.id; 
+    const textfile=req.body.text;          // ID from formdata
     const file = req.file;            // Image file from the upload
     const response=await ai.models.generateContent({
       model: "gemini-2.5-flash",
-      contents: "Explain how AI works in a few words with the"+String({id}),
+      contents: textfile+"limit generation to 50 lines ",
   });
     console.log(response.text);
     console.log("ID:", id);
