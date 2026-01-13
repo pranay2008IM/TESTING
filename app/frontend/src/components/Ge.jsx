@@ -4,7 +4,6 @@ import "../styling/gen.css";
 function Ge({ senddata }) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedText, setGeneratedText] = useState("");
-  const [textinputfield,settextf]=useState("");
 
   // 🔒 SAFETY CHECK
   if (!senddata) {
@@ -25,10 +24,26 @@ function Ge({ senddata }) {
     formData.append("text",senddata.textinput);
 
     try {
-      const res = await fetch("https://testing-1-gn0w.onrender.com/api/generation", {
+      const token =localStorage.getItem("token");
+      if(!token){
+        alert("session expired ,reload the page");
+        setIsGenerating(false);
+        return;
+      }
+      const res = await fetch("http://localhost:5000/api/generation", {
         method: "POST",
+        headers:{
+          Authorization:`Bearer ${token}`,
+        },
         body: formData,
       });
+      if (!res.ok) {
+        if (res.status === 401 || res.status === 403) {
+          localStorage.removeItem("token");
+          throw new Error("Unauthorized. Please refresh.");
+        }
+        throw new Error("Server error");
+      }
 
       const data = await res.json();
       setGeneratedText(data.message);

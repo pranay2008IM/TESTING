@@ -1,26 +1,52 @@
-import express, { response, text } from "express";
+import express from "express";
 import cors from "cors";
 import multer from "multer";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import ratelimit from "express-rate-limit";
+import jwt from "jsonwebtoken";
+import verifyToken from "./middleware/verifytokens.js";
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
 
-// memory storage → keeps file in RAM
+app.use(cors({
+  origin:["http://localhost:5173"],
+  methods: ["GET","POST","OPTIONS"],
+  allowedHeaders: ["Content-Type","Authorization"],
+}));
+
+app.options("*",cors());
+
+app.use(express.json());
+
+/*app.use("/api",ratelimit({ windowMs: 15 * 60 * 1000,
+  max: 100}))*/
 const upload = multer({ storage: multer.memoryStorage() });
 
 const ai =new GoogleGenAI({apiKey:process.env.GEMINI_API_KEY})
-console.log(process.env.GEMINI_API_KEY)
 // Simple test GET route
 app.get("/", (req, res) => {
   res.send("Backend is working!");
 });
 
+
+
+app.get("/api/token",(req,res)=>{
+  const token=jwt.sign({app:"frontend"},
+    process.env.JWT_SECRET,
+    {expiresIn:"10m"}
+  );
+  res.json({token});
+})
+
+
+
+
+
 // THIS route accepts FormData (image + id)
-app.post("/api/generation", upload.single("image"), async (req, res) => {
+app.post("/api/generation",verifyToken, upload.single("image"), async (req, res) => {
   try {
     const id = req.body.id; 
     const textfile=req.body.text;          // ID from formdata
@@ -29,7 +55,7 @@ app.post("/api/generation", upload.single("image"), async (req, res) => {
       model: "gemini-2.5-flash",
       contents: textfile,
       config: {
-      maxOutputTokens: 2000,
+      maxOutputTokens: 500,
       temperature: 0.6,
     },
   });

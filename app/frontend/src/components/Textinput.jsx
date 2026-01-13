@@ -10,6 +10,7 @@ function Textinput({onsettextinput}){
 
     return (
         <div className="inputareatext">
+          <p className="infor"><b>ChatBot</b></p>
         <input
         type="text"
         value={text}

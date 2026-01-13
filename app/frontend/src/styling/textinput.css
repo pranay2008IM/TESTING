@@ -19,7 +19,7 @@ input{
     justify-content: center;
     margin:20px;
     border-radius: 20px;
-    border:2px dashed white
+    border:2px dashed white;
 }
 .sendbutton{
     width: 90px;
@@ -38,4 +38,38 @@ input{
 input:focus{
     outline: none;
     box-shadow: none;
+}
+@media (max-width: 1080px) {
+    .inputareatext {
+        width: 90%;
+        height: 400px;       /* still fixed */
+    }
+}
+@media (max-width: 850px) {
+    .inputareatext {
+        width: 90%;
+        height: 400px;       /* still fixed */
+    }
+}
+
+@media (max-width: 600px) {
+    /*.inputarea 
+        flex: 0;        
+        max-width: 400px; 
+        max-height: 400px;
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    */
+        .inputareatext {
+        width: 90%;
+        height: 350px;       /* fixed */
+    }
+}
+@media (max-width: 450px) {
+    .inputareatext {
+        flex: 0;         /* stop expanding */
+        width: 300px; /* optional */ 
+        padding: 20px;
+    }
 }
