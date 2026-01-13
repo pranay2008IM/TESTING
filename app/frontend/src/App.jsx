@@ -5,14 +5,22 @@ import { useEffect } from 'react';
 function App() {
   useEffect(() => {
     async function fetchToken() {
-      const existingToken = localStorage.getItem("token");
+      const existingToken = sessionStorage.getItem("token");
 
       if (existingToken) return;
-
-      const res = await fetch("http://localhost:5000/api/token");
-      const data = await res.json();
-      localStorage.setItem("token", data.token);
+      try{
+          const res = await fetch("https://testing-1-gn0w.onrender.com/api/token",{mode:"cors"});
+          if(!res.ok){
+            throw new Error("token fetch failed");
+          }
+          const data = await res.json();
+          sessionStorage.setItem("token", data.token);
+      }
+       catch (err) {
+        console.error("Unable to get token:", err);
+      }
     }
+
 
     fetchToken();
   }, []);

@@ -24,13 +24,13 @@ function Ge({ senddata }) {
     formData.append("text",senddata.textinput);
 
     try {
-      const token =localStorage.getItem("token");
+      const token =sessionStorage.getItem("token");
       if(!token){
         alert("session expired ,reload the page");
         setIsGenerating(false);
         return;
       }
-      const res = await fetch("http://localhost:5000/api/generation", {
+      const res = await fetch("https://testing-1-gn0w.onrender.com/api/generation", {
         method: "POST",
         headers:{
           Authorization:`Bearer ${token}`,
@@ -39,7 +39,7 @@ function Ge({ senddata }) {
       });
       if (!res.ok) {
         if (res.status === 401 || res.status === 403) {
-          localStorage.removeItem("token");
+          sessionStorage.removeItem("token");
           throw new Error("Unauthorized. Please refresh.");
         }
         throw new Error("Server error");
